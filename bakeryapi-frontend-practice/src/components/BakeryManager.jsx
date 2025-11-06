@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './style.css'; 
-import config from './config.js';
+
 
 const BakeryManager = () => {
   const [items, setItems] = useState([]);
@@ -20,7 +20,8 @@ const BakeryManager = () => {
   const [editMode, setEditMode] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  const baseUrl = `${config.url}`;
+  const baseUrl = `${import.meta.env.VITE_API_URL}/bakeryapi`;
+
 
   useEffect(() => {
     fetchAllItems();
